@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class ExpensesViewController: UIViewController {
-
+    
     //MARK: - Properties
     @IBOutlet weak var expensesTableview: UITableView!
     private var resultsController: NSFetchedResultsController<Expense>!
@@ -24,10 +24,11 @@ class ExpensesViewController: UIViewController {
         expensesTableview.dataSource = self
         expensesTableview.delegate = self
         expensesTableview.register(UINib(nibName: "ExpenseTableViewCell", bundle: nil),
-        forCellReuseIdentifier: "ExpenseTableViewCell")
+                                   forCellReuseIdentifier: "ExpenseTableViewCell")
         
         let request = Expense.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "section.name", ascending: true),
+                                   NSSortDescriptor(key: "name", ascending: true)]
         resultsController = NSFetchedResultsController(fetchRequest: request,
                                                        managedObjectContext: DataService.shared.context,
                                                        sectionNameKeyPath: "section.name",
@@ -65,7 +66,7 @@ extension ExpensesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customCell = tableView.dequeueReusableCell(withIdentifier:
-        "ExpenseTableViewCell", for: indexPath) as! ExpenseTableViewCell
+                                                        "ExpenseTableViewCell", for: indexPath) as! ExpenseTableViewCell
         let expense = resultsController.object(at: indexPath)
         
         customCell.setup(expense: expense)

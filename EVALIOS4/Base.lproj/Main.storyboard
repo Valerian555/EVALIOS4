@@ -142,9 +142,54 @@
                     <view key="view" contentMode="scaleToFill" id="8Tk-zc-9E6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsu-LA-jeM">
+                                <rect key="frame" x="10" y="69" width="373" height="29"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpm-ao-evC">
+                                <rect key="frame" x="10" y="117.99999999999999" width="373" height="40.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abV-Ou-hRG">
+                                <rect key="frame" x="10" y="208.33333333333334" width="373" height="19"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc1-Gj-1eQ">
+                                <rect key="frame" x="10" y="237.33333333333334" width="373" height="17.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ygR-qo-wGT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jsu-LA-jeM" firstAttribute="leading" secondItem="ygR-qo-wGT" secondAttribute="leading" constant="10" id="3Ss-E3-7St"/>
+                            <constraint firstItem="ygR-qo-wGT" firstAttribute="trailing" secondItem="Cc1-Gj-1eQ" secondAttribute="trailing" constant="10" id="7B3-PJ-UhF"/>
+                            <constraint firstItem="Cc1-Gj-1eQ" firstAttribute="top" secondItem="abV-Ou-hRG" secondAttribute="bottom" constant="10" id="Epc-0H-u2O"/>
+                            <constraint firstItem="ygR-qo-wGT" firstAttribute="trailing" secondItem="Jsu-LA-jeM" secondAttribute="trailing" constant="10" id="Fc2-H6-gGc"/>
+                            <constraint firstItem="ygR-qo-wGT" firstAttribute="trailing" secondItem="vpm-ao-evC" secondAttribute="trailing" constant="10" id="NRb-Ik-KF7"/>
+                            <constraint firstItem="Cc1-Gj-1eQ" firstAttribute="leading" secondItem="ygR-qo-wGT" secondAttribute="leading" constant="10" id="Q8h-w9-7ri"/>
+                            <constraint firstItem="Jsu-LA-jeM" firstAttribute="top" secondItem="ygR-qo-wGT" secondAttribute="top" constant="10" id="RYJ-CC-6Nu"/>
+                            <constraint firstItem="abV-Ou-hRG" firstAttribute="leading" secondItem="ygR-qo-wGT" secondAttribute="leading" constant="10" id="fst-km-za0"/>
+                            <constraint firstItem="vpm-ao-evC" firstAttribute="leading" secondItem="ygR-qo-wGT" secondAttribute="leading" constant="10" id="ipi-fL-EfM"/>
+                            <constraint firstItem="ygR-qo-wGT" firstAttribute="trailing" secondItem="abV-Ou-hRG" secondAttribute="trailing" constant="10" id="jUK-Nu-az7"/>
+                            <constraint firstItem="abV-Ou-hRG" firstAttribute="top" secondItem="vpm-ao-evC" secondAttribute="bottom" constant="50" id="nO4-MD-V5Z"/>
+                            <constraint firstItem="vpm-ao-evC" firstAttribute="top" secondItem="Jsu-LA-jeM" secondAttribute="bottom" constant="20" id="x4T-2O-5Rm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="expenseDate" destination="Cc1-Gj-1eQ" id="CBo-Wt-w1B"/>
+                        <outlet property="expenseName" destination="Jsu-LA-jeM" id="P1x-Ff-uSR"/>
+                        <outlet property="expenseValue" destination="vpm-ao-evC" id="2Vd-25-Fbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lh-ZZ-o7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,60 +219,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sandwich" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKw-7L-L2q">
-                                <rect key="frame" x="10" y="154" width="373" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la dépense " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKw-7L-L2q">
+                                <rect key="frame" x="10" y="151.66666666666666" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8TZ-5w-0PX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77x-7k-2TI">
-                                <rect key="frame" x="10" y="123" width="373" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom de la dépense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77x-7k-2TI">
+                                <rect key="frame" x="10" y="123.00000000000001" width="373" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4.5" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23J-dG-3AN">
-                                <rect key="frame" x="10" y="239" width="373" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23J-dG-3AN">
+                                <rect key="frame" x="10" y="250.66666666666663" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dPA-Of-JDy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD8-Td-AO4">
-                                <rect key="frame" x="10" y="208" width="373" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD8-Td-AO4">
+                                <rect key="frame" x="10" y="221.66666666666666" width="373" height="19"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-KJ-hrH">
-                                <rect key="frame" x="10" y="293" width="373" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-KJ-hrH">
+                                <rect key="frame" x="10" y="320.66666666666669" width="373" height="19"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-9j-K1d">
-                                <rect key="frame" x="10" y="444" width="373" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-9j-K1d">
+                                <rect key="frame" x="10" y="419.66666666666669" width="373" height="19"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nO0-Ed-aZz">
-                                <rect key="frame" x="10" y="324" width="373" height="100"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="nO0-Ed-aZz">
+                                <rect key="frame" x="10" y="350" width="373" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="n7j-M1-1HC"/>
+                                    <constraint firstAttribute="height" constant="50" id="n7j-M1-1HC"/>
                                 </constraints>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LbI-lg-78K">
-                                <rect key="frame" x="10" y="475" width="373" height="200"/>
+                                <rect key="frame" x="10" y="449" width="373" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="DiY-cW-KAn"/>
+                                    <constraint firstAttribute="height" constant="100" id="DiY-cW-KAn"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlk-u5-rgd">
+                                <rect key="frame" x="10" y="758" width="373" height="50"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hDK-MS-uZN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="AJOUTER LA DÉPENSE">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveExpenseTap:" destination="WGu-3w-x59" eventType="touchUpInside" id="8DM-Ko-2uw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9sB-Ht-Umg"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98525854550000003" green="0.98525854550000003" blue="0.98525854550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="77x-7k-2TI" firstAttribute="top" secondItem="9sB-Ht-Umg" secondAttribute="top" constant="20" id="1oI-7w-Rna"/>
+                            <constraint firstItem="9sB-Ht-Umg" firstAttribute="trailing" secondItem="Dlk-u5-rgd" secondAttribute="trailing" constant="10" id="1zf-e1-q59"/>
                             <constraint firstItem="uD8-Td-AO4" firstAttribute="top" secondItem="FKw-7L-L2q" secondAttribute="bottom" constant="20" id="9VF-Wf-Ty6"/>
                             <constraint firstItem="77x-7k-2TI" firstAttribute="leading" secondItem="9sB-Ht-Umg" secondAttribute="leading" constant="10" id="A3n-SM-OXC"/>
                             <constraint firstItem="nO0-Ed-aZz" firstAttribute="leading" secondItem="aYC-g5-tNg" secondAttribute="leading" constant="10" id="A7D-zy-E2J"/>
+                            <constraint firstItem="9sB-Ht-Umg" firstAttribute="bottom" secondItem="Dlk-u5-rgd" secondAttribute="bottom" constant="10" id="ATt-zM-6u4"/>
                             <constraint firstItem="Ovc-KJ-hrH" firstAttribute="top" secondItem="23J-dG-3AN" secondAttribute="bottom" constant="20" id="BoH-gL-jr2"/>
                             <constraint firstItem="9sB-Ht-Umg" firstAttribute="trailing" secondItem="r9o-9j-K1d" secondAttribute="trailing" constant="10" id="DKR-NG-f0g"/>
                             <constraint firstItem="9sB-Ht-Umg" firstAttribute="trailing" secondItem="Ovc-KJ-hrH" secondAttribute="trailing" constant="10" id="Eye-LT-kTf"/>
@@ -238,6 +306,7 @@
                             <constraint firstAttribute="trailing" secondItem="nO0-Ed-aZz" secondAttribute="trailing" constant="10" id="Rfp-RQ-ceW"/>
                             <constraint firstItem="FKw-7L-L2q" firstAttribute="leading" secondItem="9sB-Ht-Umg" secondAttribute="leading" constant="10" id="UPy-Fi-lFm"/>
                             <constraint firstItem="uD8-Td-AO4" firstAttribute="leading" secondItem="9sB-Ht-Umg" secondAttribute="leading" constant="10" id="Wuo-VE-4p8"/>
+                            <constraint firstItem="Dlk-u5-rgd" firstAttribute="leading" secondItem="9sB-Ht-Umg" secondAttribute="leading" constant="10" id="XxA-wc-smw"/>
                             <constraint firstItem="nO0-Ed-aZz" firstAttribute="top" secondItem="Ovc-KJ-hrH" secondAttribute="bottom" constant="10" id="ZsN-kx-PCK"/>
                             <constraint firstItem="r9o-9j-K1d" firstAttribute="top" secondItem="nO0-Ed-aZz" secondAttribute="bottom" constant="20" id="cG1-2g-keQ"/>
                             <constraint firstItem="23J-dG-3AN" firstAttribute="leading" secondItem="9sB-Ht-Umg" secondAttribute="leading" constant="10" id="gDJ-qP-tS4"/>
@@ -251,19 +320,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xMR-td-Mag">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="hVo-zB-Byu">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" style="plain" id="hVo-zB-Byu">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cancelTap:" destination="WGu-3w-x59" id="olO-Sg-daL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="IYW-88-XOC">
-                            <connections>
-                                <action selector="saveExpenseTap:" destination="WGu-3w-x59" id="zhC-Id-fA0"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="expenseNameInput" destination="FKw-7L-L2q" id="W40-DF-4Pz"/>
+                        <outlet property="addExpenseButton" destination="Dlk-u5-rgd" id="zib-0u-wlo"/>
+                        <outlet property="expenseNameInput" destination="FKw-7L-L2q" id="6Ob-Vu-Ohy"/>
                         <outlet property="expenseSectionPicker" destination="LbI-lg-78K" id="5Ym-aS-hct"/>
                         <outlet property="expenseTimePicker" destination="nO0-Ed-aZz" id="Aw1-o7-y4g"/>
                         <outlet property="expenseValueInput" destination="23J-dG-3AN" id="HlP-0x-0hf"/>
@@ -275,13 +341,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="eurosign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -8,8 +8,9 @@
 import UIKit
 
 class AddExpenseViewController: UIViewController {
-
+    
     //MARK: - Properties
+    @IBOutlet weak var addExpenseButton: UIButton!
     @IBOutlet weak var expenseNameInput: UITextField!
     @IBOutlet weak var expenseValueInput: UITextField!
     @IBOutlet weak var expenseTimePicker: UIDatePicker!
@@ -19,7 +20,26 @@ class AddExpenseViewController: UIViewController {
     //MARK: - Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //timePicker UI
+        expenseTimePicker.contentHorizontalAlignment = .center
+        expenseTimePicker.layer.cornerRadius = 5
+        expenseTimePicker.clipsToBounds = true
+        expenseTimePicker.backgroundColor = .white
+        expenseTimePicker.layer.borderWidth = 0.5
+        expenseTimePicker.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
+        
+        //sectionPicker UI
+        expenseSectionPicker.layer.cornerRadius = 5
+        expenseSectionPicker.clipsToBounds = true
+        expenseSectionPicker.backgroundColor = .white
+        expenseSectionPicker.layer.borderWidth = 0.5
+        expenseSectionPicker.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.4).cgColor
+        
+        //add button UI
+        addExpenseButton.layer.cornerRadius = 24
+        addExpenseButton.clipsToBounds = true
+        
         //titre de la modal
         self.title = "Ajouter une dépense"
         
@@ -27,7 +47,7 @@ class AddExpenseViewController: UIViewController {
         expenseSectionPicker.delegate = self
         expenseSectionPicker.dataSource = self
         
-        //Une requête pour récupérer toutes les catégories de recettes depuis Core Data, triées par ordre alphabétique.
+        //Une requête pour récupérer toutes les sections
         let request = ExpenseSection.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
@@ -38,8 +58,10 @@ class AddExpenseViewController: UIViewController {
         }
     }
     
-
+    
+    //MARK: - Ajout dépense
     @IBAction func saveExpenseTap(_ sender: Any) {
+        //vérification des champs
         guard let name = expenseNameInput.text, let value = expenseValueInput.text else { return }
         
         guard !name.isEmpty else {
@@ -53,12 +75,12 @@ class AddExpenseViewController: UIViewController {
             return
         }
         
-        
-        //insertion de la recette dans la db
+        //insertion de la dépense dans la db
         DataService.shared.addExpense(name: name,
                                       value: Float(value) ?? 0,
                                       date: expenseTimePicker.date,
                                       section: section[expenseSectionPicker.selectedRow(inComponent: 0)])
+        
         dismiss(animated: true, completion: nil)
     }
     
